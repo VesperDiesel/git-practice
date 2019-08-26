@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        我今年 <span></span>岁了
+        <input type="text" id="txt">
+    </div>
+    <script>
+        //如何给一个对象的属性赋值
+        let obj = {}
+        let data = {}
+        //常规的赋值手段
+        // obj.age = 10;
+        // Object.defineProperty
+        //作用：给属性赋值
+        //特点：有监听赋值的方法
+        //参数1:要赋值属性所属的对象
+        //参数2:要赋值的属性（string）
+        //参数3:一个对象，get 和 set方法
+        Object.defineProperty(obj, 'age', {
+            get: function () {
+                console.log('有人获取值')
+                return data.tmp;
+            },
+            set: function (value) {
+                data.tmp = value;
+                console.log('有人赋值')
+                document.querySelector('span').innerHTML = value;
+            }
+        })
+        document.querySelector('input').oninput = function (e) {
+            obj.age = e.target.value;
+        }
+    </script>
+</body>
+
+</html>

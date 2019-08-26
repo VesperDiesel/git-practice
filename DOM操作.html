@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="myFunction()">点我</button>
+    <script>
+        // 一、 创建节点、 追加节点
+        // 1、 createElement（ 标签名） 创建一个元素节点（ 具体的一个元素）。
+        // 2、 createTextNode（ 节点文本内容） 创建一个文本节点
+        // 3、 createDocumentFragment() //创建一个 DOM 片段
+        // 4、 appendChild（ 节点） 追加一个节点
+
+        function myFunction() {
+            // var t = document.createTextNode("Hello World");
+            // document.body.appendChild(t);
+            var h = document.createElement("H1");
+            var t = document.createTextNode("Hello World");
+            h.appendChild(t);
+            document.body.appendChild(h);
+        };
+
+        
+    </script>
+</body>
+
+</html>
